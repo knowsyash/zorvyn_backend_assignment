@@ -28,6 +28,10 @@ app.get("/health", (_req, res) => {
     res.json({ status: "ok" });
 });
 
+app.get("/", (_req, res) => {
+    res.redirect("/api/docs");
+});
+
 const demoModeEnabled = env.enableDemoSeed || env.enableDemoResetEndpoint;
 
 const swaggerCustomCss = demoModeEnabled
