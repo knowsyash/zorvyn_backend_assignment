@@ -1,12 +1,8 @@
 import dotenv from "dotenv";
 
 dotenv.config();
+const mongoUri = process.env.MONGO_URI || "";
 
-const mongoUri = process.env.MONGO_URI;
-
-if (!mongoUri) {
-    throw new Error("MONGO_URI is required and must point to a MongoDB Atlas cluster");
-}
 
 export const env = {
     port: Number(process.env.PORT || 4000),
